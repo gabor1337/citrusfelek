@@ -63,7 +63,7 @@
                 <table class="d-none d-md-table table table-striped">
                     <thead>
                         <tr class="bg-light">
-                            <th colspan="8">100 g mandarin tartalmaz</th>
+                            <td colspan="8">100 g mandarin tartalmaz </td>
                            
                         </tr>
                         <tr>
@@ -92,9 +92,33 @@
                 </table>
             </div>
         </article>
+
+        <div class="container row d-inline d-sm-block  d-md-none  d-lg-none">
+            <input id="tomeg" type="text" placeholder="Add meg a mennyiséget!" required>g
+            <br>
+            <button type="button" onclick="szamol()" class="btn btn-primary">Számol!</button> 
+            <p id="eredmeny"></p>
+        </div> 
+
     </main>
     <script src="bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
+
+<script>
+        function szamol(){
+            let g =+ document.getElementById('tomeg').value
+            if(document.getElementById('tomeg').value==""){
+                document.getElementById('eredmeny').innerHTML='Nem írtál be semmit!'
+            }
+             else{
+                //console.log(g)
+                let kcal= g/100*46
+                //console.log(kcal)
+                let kcal2 = g/100*50
+                document.getElementById('eredmeny').innerHTML=kcal+ `-`+kcal2+` kcal`
+            }
+            }
+</script>
 
 </html>
